@@ -30,24 +30,36 @@ namespace BTL
                 f2.Visible = false;
             }
 
-            string email = Request.QueryString["email"];
+            // Dang nhap
+            //string email = Request.QueryString["email"];
+            string phone = Request.QueryString["phone"];
             string pass = Request.QueryString["password"];
             List<Accounts> accs = (List<Accounts>)Application["Accounts"];
             foreach (Accounts ac in accs)
             {
-                if (ac.email == email && ac.password == pass)
+                if (ac.phone == phone && ac.password == pass)
                 {
                     Session["account"] = ac.firtName + " " + ac.lastName;
                     Response.Redirect("Home.aspx");
                 }
             }
+
+
+
+
+            //Dang ky
             string emailSu = Request.QueryString["emailSu"];
             string passSu = Request.QueryString["passwordSu"];
+
+
+            string phoneNumberSu = Request.QueryString["phoneSu"];
+
+
             string fnSu = Request.QueryString["fnSu"];
             string lnSu = Request.QueryString["lnSu"];
             if(emailSu != null)
             {
-                accs.Add(new Accounts(fnSu, lnSu, emailSu, "", passSu));
+                accs.Add(new Accounts(fnSu, lnSu, emailSu, phoneNumberSu, passSu));
                 Session["account"] = fnSu +" "+ lnSu;
                 Response.Redirect("Home.aspx");
             }

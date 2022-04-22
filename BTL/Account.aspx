@@ -78,17 +78,19 @@
             check();
         }
         function check() {
-            var email = document.getElementById("txtLoginEmail");
+            //var email = document.getElementById("txtLoginEmail");
             var pass = document.getElementById("txtLoginPass");
-            var sdt = document.getElementById("txtSignUpPhone")
-            if (!sdt.value.length  <= 11 && pass.value.length <= 6) {
-               alert("Vui lòng nhập đúng định dạng tài khoản, mật khẩu. \n(Số điện thoại, Mật khẩu lớn hơn 8 kí tự)");
 
-               
+            var phone = document.getElementById("txtLoginPhone")
+
+            var sdt = document.getElementById("txtSignUpPhone")
+            if (phone.value.length  >= 11 && pass.value.length <= 6) {
+               alert("Vui lòng nhập đúng định dạng tài khoản, mật khẩu. \n(Số điện thoại, Mật khẩu lớn hơn 8 kí tự)");               
             }
           else {
-                alert("đăng nhập thành công");
-                window.location.href = "Account.aspx?email=" + sdt.value + "&password=" + pass.value;
+                //alert("đăng nhập thành công");
+                //window.location.href = "Account.aspx?email=" + sdt.value + "&password=" + pass.value;
+                window.location.href = "Account.aspx?&phone=" + phone.value + "&password=" + pass.value;
 
             }
         //    if (email.value.length <= 11 && pass.value.length <= 6) {
@@ -118,11 +120,15 @@
             var phone = document.getElementById("txtSignUpPhone")
             //if (!validateEmail(email.value) && pass.value.length <= 6 && validatePhone(phone.value) <= 8 ){
             //    alert("Vui lòng nhập đúng định dạng tài khoản, mật khẩu. \n(Tài khoản email, Mật khẩu lớn hơn 8 kí tự)");
-            //    /*validateEmail(email.value)*/
+            //    validateEmail(email.value)
+            //}
+            //if (validatePhone(phone.value) <= 8) {
+            //    alert("Vui lòng nhập đúng định dạng tài khoản, mật khẩu. \n(Tài khoản email, Mật khẩu lớn hơn 8 kí tự)");
+            //    //validateEmail(email.value)
             //}
             //else {
             //    alert("Đăng kí thành công");
-            //     window.location.href = "Account.aspx?emailSu=" + email.value + "&passwordSu=" + pass.value + "&fnSu=" + firstname.value + "&lnSu=" + lastname.value + "&phone=" +phone.value;
+            //     window.location.href = "Account.aspx?emailSu=" + email.value + "&passwordSu=" + pass.value + "&fnSu=" + firstname.value + "&lnSu=" + lastname.value + "&phoneSu=" +phone.value;
                 
             //}
             // cách ra
@@ -132,19 +138,19 @@
             //    document.getElementById('error1').innerHTML = 'Tài khoản hoặc mật khẩu không đúng định dạng';
             //   /* document.getElementById('error2').innerHTML = 'Tài khoản hoặc mật khẩu không đúng định dạng';*/
             //    status = false;
-            if (firstname.value === "") {
-                document.getElementById('error').innerHTML = 'Chưa nhập họ';
-                /*status = false;*/
-                /*return false;*/
+            //if (firstname.value === "") {
+            //    document.getElementById('error').innerHTML = 'Chưa nhập họ';
+            //    /*status = false;*/
+            //    /*return false;*/
 
-            }
-            if (lastname.value === "") {
-                document.ggetElementById('error1').innerHTML = 'Chưa nhập tên';
-               /* return false;*/
-            }
+            //}
+            //if (lastname.value === "") {
+            //    document.getElementById('error1').innerHTML = 'Chưa nhập tên';
+            //   /* return false;*/
+            //}
             //else {
-            //    window.location.href = "Account.aspx?emailSu=" + email.value + "&passwordSu=" + pass.value + "&fnSu=" + firstname.value + "&lnSu=" + lastname.value + "phoneSu" + phone.value;
-            //    document.getElementById('error_c').innerHTML = "";
+                window.location.href = "Account.aspx?emailSu=" + email.value + "&passwordSu=" + pass.value + "&fnSu=" + firstname.value + "&lnSu=" + lastname.value + "&phoneSu=" + phone.value;
+                document.getElementById('error_c').innerHTML = "";
             //}
 
         }
@@ -234,9 +240,12 @@
             <div class="form-login">
                 <h2 class="form-tt">Đăng Nhập</h2>
                 <p class="form-child-tt">Nếu bạn đã có tài khoản, hãy đăng nhập để tích lũy điểm thành viên và nhận được những ưu đãi tốt hơn!</p>
-                <label for="txtLoginUser" class="form-label">Email:</label>
+<%--                <label for="txtLoginUser" class="form-label">Email:</label>
                 <br />
-                <input type="text" id="txtLoginEmail" placeholder="Email" class="form-input" />
+                <input type="text" id="txtLoginEmail" placeholder="Email" class="form-input" />--%>
+                <label for="txtLoginUser" class="form-label">Phone:</label>
+                <br />
+                <input type="text" id="txtLoginPhone" placeholder="Phone" class="form-input" />
                 <br />
                 <br />
                 <label for="txtLoginPass" class="form-label">Mật khẩu:</label>
@@ -270,13 +279,13 @@
                 <span id="error2" style="color:red;"> </span>
                 <br />
                  <br />
-                    <%--<label for="txtSignUpPhone" class="form-label">Số điện thoại:</label>
+                    <label for="txtSignUpPhone" class="form-label">Số điện thoại:</label>
                    <br />
                 
-                   <input type="text" id="txtSignUpPhone" placeholder="Số điện thoại" class="form-input" />
-                <span id="error"> error</span>
+                   <input type="number" min="0" step="1" id="txtSignUpPhone" placeholder="Số điện thoại" class="form-input" />
+                <span id="error100"> error</span>
                    <br />
-                <br />--%>
+                <br />
                 <label for="txtSignUpPass" class="form-label">Mật khẩu:</label>
                 <br />
                 <input type="text" id="txtSignUpPass" placeholder="Mật khẩu" class="form-input" />
