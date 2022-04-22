@@ -1,0 +1,972 @@
+﻿@font-face {
+    font-family: Lexend-SemiBold;
+    src: url("../Font/Lexend-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: Lexend-Bold;
+    src: url("../Font/Lexend-Bold.ttf");
+}
+
+@font-face {
+    font-family: Lexend-ExtraBold;
+    src: url("../Font/Lexend-ExtraBold.ttf");
+}
+
+@font-face {
+    font-family: Lexend-Light;
+    src: url("../Font/Lexend-Light.ttf");
+}
+
+@font-face {
+    font-family: Lexend-Thin;
+    src: url("../Font/Lexend-Thin.ttf");
+}
+
+@font-face {
+    font-family: Lexend-Regular;
+    src: url("../Font/Lexend-Regular.ttf");
+}
+
+@font-face {
+    font-family: Lexend-Medium;
+    src: url("../Font/Lexend-Medium.ttf");
+}
+
+@font-face {
+    font-family: Allura-Regular;
+    src: url("../Font/Allura-Regular.ttf");
+}
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #fafafa;
+}
+/*Header*/
+.headerMid {
+    clear: both;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    background-color: #e8e8e8;
+}
+
+.headerMid-logo {
+    flex: 1;
+    text-align: center;
+}
+
+    .headerMid-logo img {
+        width: 100px;
+        height: 100px;
+        margin-left: 50px;
+    }
+
+.headerMid-menu-left {
+    height: auto;
+    flex: 5;
+}
+
+.headerMid-menu-left_list {
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    font-family: Lexend-Bold;
+    font-size: 1.1rem;
+}
+
+.headerMid-menu-left_list_items {
+    margin-top: 20px;
+    margin-right: 30px;
+}
+
+    .headerMid-menu-left_list_items a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    .headerMid-menu-left_list_items:hover {
+        color: rgb(255, 187, 0);
+        cursor: default;
+        font-style: inherit;
+    }
+
+.headerMid-menu-right {
+    height: auto;
+    float: left;
+    width: 100%;
+    float: left;
+    flex: 3;
+    display: flex;
+}
+
+.headerMid-menu-right {
+}
+/*Icon*/
+.list-icon {
+    display: flex;
+    margin-top: 35px;
+    margin-right: 50px;
+    position: relative;
+}
+
+    .list-icon i {
+        font-size: 20px;
+        margin-right: 15px;
+    }
+
+.number-items {
+    background-color: red;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    font-family: Lexend-Bold;
+    font-size: 0.6em;
+    position: absolute;
+    top: -15px;
+    right: 10px;
+    padding-top: 1px;
+    display: none;
+}
+
+.cart {
+    width: 315%;
+    z-index: 1;
+    right: 0;
+    background-color: white;
+    border: 2px solid #fc9400;
+    top: 30px;
+    position: absolute;
+    display: none;
+}
+
+    .cart::before {
+        content: "";
+        border: 10px solid;
+        border-color: transparent transparent #fff transparent;
+        position: absolute;
+        right: 12px;
+        top: -20px;
+    }
+
+    .cart h5 {
+        text-align: center;
+    }
+
+.items-cart-icon {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.items-content-cart {
+    flex: 6;
+}
+
+.items-name-cart {
+    margin-left: 10px;
+    font-family: Lexend-Regular;
+    font-size: 0.7em;
+}
+
+.items-img-cart {
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+    flex: 2;
+}
+
+.items-number-cart {
+    margin-left: 10px;
+    font-size: 0.6em;
+}
+
+.items-price-cart {
+    text-align: center;
+    padding-right: 10px;
+    color: red;
+    flex: 2;
+}
+
+#cartlistItems {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+#allMoney {
+    font-family: Lexend-Regular;
+}
+
+.cart-container-button {
+    text-align: center;
+}
+
+#btnPay {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    padding: 5px;
+    background-color: #fc9400;
+    color: white;
+}
+
+
+.search_box {
+    padding-top: 13px;
+    flex-grow: 1;
+    display: flex;
+    opacity: 60%;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.search_form {
+    background-color: white;
+    height: 25px;
+    border-radius: 15px;
+    margin-top: 22px;
+    margin-right: 20px;
+}
+
+.input_search {
+    border: none;
+    width: 150px;
+    height: 100%;
+    padding-top: 0em;
+    margin-left: 10px;
+    background-color: transparent;
+}
+
+.btn_search {
+    margin-right: 8px;
+    margin-top: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+    .btn_search > i {
+        align-items: center;
+        color: #000;
+    }
+
+.search_box:hover {
+    opacity: 100%;
+}
+/*Content*/
+@font-face {
+    font-family: Lexend-SemiBold;
+    src: url("../Font/Lexend-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: Lexend-Bold;
+    src: url("../Font/Lexend-Bold.ttf");
+}
+
+@font-face {
+    font-family: Lexend-ExtraBold;
+    src: url("../Font/Lexend-ExtraBold.ttf");
+}
+
+@font-face {
+    font-family: Lexend-Light;
+    src: url("../Font/Lexend-Light.ttf");
+}
+
+@font-face {
+    font-family: Lexend-Thin;
+    src: url("../Font/Lexend-Thin.ttf");
+}
+
+@font-face {
+    font-family: Lexend-Regular;
+    src: url("../Font/Lexend-Regular.ttf");
+}
+
+@font-face {
+    font-family: Lexend-Medium;
+    src: url("../Font/Lexend-Medium.ttf");
+}
+
+@font-face {
+    font-family: Allura-Regular;
+    src: url("../Font/Allura-Regular.ttf");
+}
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #fafafa;
+}
+/*Header*/
+.headerMid {
+    clear: both;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    background-color: #e8e8e8;
+}
+
+.headerMid-logo {
+    flex: 1;
+    text-align: center;
+}
+
+    .headerMid-logo img {
+        width: 100px;
+        height: 100px;
+        margin-left: 50px;
+    }
+
+.headerMid-menu-left {
+    height: auto;
+    flex: 5;
+}
+
+.headerMid-menu-left_list {
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    font-family: Lexend-Bold;
+    font-size: 1.1rem;
+}
+
+.headerMid-menu-left_list_items {
+    margin-top: 20px;
+    margin-right: 30px;
+}
+
+    .headerMid-menu-left_list_items a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    .headerMid-menu-left_list_items:hover {
+        color: rgb(255, 187, 0);
+        cursor: default;
+        font-style: inherit;
+    }
+
+.headerMid-menu-right {
+    height: auto;
+    float: left;
+    width: 100%;
+    float: left;
+    flex: 3;
+    display: flex;
+}
+
+.headerMid-menu-right {
+}
+/*Icon*/
+.list-icon {
+    display: flex;
+    margin-top: 35px;
+    margin-right: 50px;
+    position: relative;
+}
+
+    .list-icon i {
+        font-size: 20px;
+        margin-right: 15px;
+    }
+.accounts {
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    top: 35px;
+    right: 10px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: none;
+}
+
+    .accounts::before {
+        content: "";
+        border: 15px solid;
+        border-color: transparent transparent #fff transparent;
+        position: absolute;
+        right: 30px;
+        top: -25px;
+    }
+
+#tt-login {
+    margin-bottom: 10px;
+    font-size: 1em;
+    font-family: Lexend-Regular;
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+}
+
+#tt-signup {
+    margin-top: 30px;
+    font-size: 1em;
+    font-family: Lexend-Regular;
+    text-decoration: none;
+    color: #000;
+}
+
+.number-items {
+    background-color: red;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    font-family: Lexend-Bold;
+    font-size: 0.6em;
+    position: absolute;
+    top: -15px;
+    right: 10px;
+    padding-top: 1px;
+    display: none;
+}
+
+.cart {
+    width: 315%;
+    z-index: 1;
+    right: 0;
+    background-color: white;
+    border: 2px solid #fc9400;
+    top: 30px;
+    position: absolute;
+    display: none;
+}
+
+    .cart::before {
+        content: "";
+        border: 10px solid;
+        border-color: transparent transparent #fff transparent;
+        position: absolute;
+        right: 12px;
+        top: -20px;
+    }
+
+    .cart h5 {
+        text-align: center;
+    }
+
+.items-cart-icon {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.items-content-cart {
+    flex: 6;
+}
+
+.items-name-cart {
+    margin-left: 10px;
+    font-family: Lexend-Regular;
+    font-size: 0.7em;
+}
+
+.items-img-cart {
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+    flex: 2;
+}
+
+.items-number-cart {
+    margin-left: 10px;
+    font-size: 0.6em;
+}
+
+.items-price-cart {
+    text-align: center;
+    padding-right: 10px;
+    color: red;
+    flex: 2;
+}
+
+#cartlistItems {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+#allMoney {
+    font-family: Lexend-Regular;
+}
+
+.cart-container-button {
+    text-align: center;
+}
+
+#btnPay {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    padding: 5px;
+    background-color: #fc9400;
+    color: white;
+}
+
+
+.search_box {
+    padding-top: 13px;
+    flex-grow: 1;
+    display: flex;
+    opacity: 60%;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.search_form {
+    background-color: white;
+    height: 25px;
+    border-radius: 15px;
+    margin-top: 22px;
+    margin-right: 20px;
+}
+
+.input_search {
+    border: none;
+    width: 150px;
+    height: 100%;
+    padding-top: 0em;
+    margin-left: 10px;
+    background-color: transparent;
+}
+
+.btn_search {
+    margin-right: 8px;
+    margin-top: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+    .btn_search > i {
+        align-items: center;
+        color: #000;
+    }
+
+.search_box:hover {
+    opacity: 100%;
+}
+/*Content*/
+.content {
+    margin: 30px;
+}
+#itemPath {
+    font-family:Lexend-Regular;
+}
+.form {
+    display:flex;
+}
+.form-login {
+    flex: 1;
+    margin: 0 30px;
+}
+.form-signup {
+    flex: 1;
+    padding-left: 60px;
+    border-left: solid 2px #000;
+    margin: 0 30px;
+}
+.form-tt {
+    font-family: Lexend-Bold;
+   
+}
+.form-child-tt {
+    font-family: Lexend-Regular;
+    padding-bottom: 15px;
+}
+.form-label {
+    font-family:Lexend-Regular;
+    font-size: 1rem;
+    opacity: 30%;
+}
+
+.form-input {
+    font-family: Lexend-Regular;
+    font-size: 1rem;
+    width: 50%;
+    height: 40px;
+    opacity: 60%;
+    padding-left: 5px;
+}
+.form-input:hover {
+    opacity: 1;
+}
+.form-input:hover ~ .form-label{
+    opacity: 1;
+}
+.form-link {
+    display: inline-block;
+    float: right;
+    margin-top: 10px;
+    font-family: Lexend-Regular;
+    text-decoration: none
+}
+.form-btn {
+    width:100%;
+    height: 40px;
+    background-color: #000;
+    color: #fff;
+    font-family: Lexend-SemiBold;
+    font-size: 1.2em;
+    margin-top: 30px;
+}
+.form-signup input[type=checkbox] {
+    width: 30px;
+    height: 20px;
+    margin-left: 0px;
+    margin-top: 10px;
+    padding-top: 5px;
+    text-align: left;
+    vertical-align: bottom;
+    position: relative;
+    top: 4px;
+}
+.form-
+/*Footer*/
+.footer {
+    background-color: #333;
+    width: 100%;
+}
+
+.footer1 {
+    display: flex;
+    padding: 30px;
+}
+
+.footer1-pay {
+    color: #999;
+    font-size: 2em;
+    font-family: Lexend-Regular;
+    flex: 1;
+    text-align: center;
+    border-right: 2px solid #999;
+    border-left: 2px solid #999;
+}
+
+.footer1-pay-list {
+    font-size: 2em;
+}
+
+.footer1-support {
+    color: #999;
+    font-size: 2em;
+    font-family: Lexend-Regular;
+    flex: 1;
+    text-align: center;
+    border-right: 2px solid #999;
+}
+
+.footer2 {
+    background-color: #222;
+    padding: 30PX;
+    color: white;
+    display: flex;
+}
+
+    .footer2 h2 {
+        text-align: center;
+        font-family: Lexend-Regular;
+        margin-top: 30px;
+        opacity: 0.6;
+    }
+
+.footer2-about {
+    flex: 1;
+}
+
+    .footer2-about p {
+        text-align: justify;
+    }
+
+.footer2-menu {
+    flex: 1;
+    text-align: center;
+}
+
+    .footer2-menu p {
+        font-family: Lexend-Bold;
+        font-size: 0.9em;
+    }
+
+.footer2-contact {
+    flex: 1;
+    text-align: center;
+}
+
+#p1 {
+    font-family: Lexend-Regular;
+    text-align: center;
+}
+
+#p2 {
+    font-family: Lexend-Regular;
+    text-align: center;
+}
+
+#p3 {
+    font-family: Lexend-Regular;
+    text-align: center;
+}
+
+.footer2-contact i {
+    text-align: center;
+    font-size: 2em;
+    margin: 0px 10px;
+}
+
+#txtEmails {
+    height: 50px;
+    width: 70%;
+    margin-bottom: 1px;
+    padding-left: 10px;
+}
+
+#btnDks {
+    background: #000;
+    border: 2px solid #fff;
+    height: 50px;
+    margin-top: 3px;
+    color: #fff;
+    width: 25%;
+    font-family: Lexend-Regular;
+    padding: 5px;
+}
+
+#btnHead {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    text-align: center;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+}
+
+/*Footer*/
+.footer {
+    background-color: #333;
+    width: 100%;
+}
+
+.footer1 {
+    display: flex;
+    padding: 30px;
+}
+
+.footer1-pay {
+    color: #999;
+    font-size: 2em;
+    font-family: Lexend-Regular;
+    flex: 1;
+    text-align: center;
+    border-right: 2px solid #999;
+    border-left: 2px solid #999;
+}
+
+.footer1-pay-list {
+    font-size: 2em;
+}
+
+.footer1-support {
+    color: #999;
+    font-size: 2em;
+    font-family: Lexend-Regular;
+    flex: 1;
+    text-align: center;
+    border-right: 2px solid #999;
+}
+
+.footer2 {
+    background-color: #222;
+    padding: 30PX;
+    color: white;
+    display: flex;
+}
+
+    .footer2 h2 {
+        text-align: center;
+        font-family: Lexend-Regular;
+        margin-top: 30px;
+        opacity: 0.6;
+    }
+
+.footer2-about {
+    flex: 1;
+}
+
+    .footer2-about p {
+        text-align: justify;
+    }
+
+.footer2-menu {
+    flex: 1;
+    text-align: center;
+}
+
+    .footer2-menu p {
+        font-family: Lexend-Bold;
+        font-size: 0.9em;
+    }
+
+.footer2-contact {
+    flex: 1;
+    text-align: center;
+}
+
+#p1 {
+    font-family: Lexend-Regular;
+    text-align: center;
+}
+
+#p2 {
+    font-family: Lexend-Regular;
+    text-align: center;
+}
+
+#p3 {
+    font-family: Lexend-Regular;
+    text-align: center;
+}
+
+.footer2-contact i {
+    text-align: center;
+    font-size: 2em;
+    margin: 0px 10px;
+}
+
+#txtEmails {
+    height: 50px;
+    width: 70%;
+    margin-bottom: 1px;
+    padding-left: 10px;
+}
+
+#btnDks {
+    background: #000;
+    border: 2px solid #fff;
+    height: 50px;
+    margin-top: 3px;
+    color: #fff;
+    width: 25%;
+    font-family: Lexend-Regular;
+    padding: 5px;
+}
+
+#btnHead {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    text-align: center;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+}
+#
